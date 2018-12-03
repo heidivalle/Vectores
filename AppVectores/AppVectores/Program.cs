@@ -85,7 +85,7 @@ namespace AppVectores
                 Console.WriteLine("Elemento indice (0) ----->", (i + 1), x[i]);
             }           
                                           
-                ¨//imprimir el vector
+               //imprimir el vector
              Console.WriteLine("\nELEMENTOS DEL VECTOR\n==================\n");
             for (int i = 0;i<8;i++)
             {
@@ -110,7 +110,7 @@ namespace AppVectores
             double p = 1;
             for (int i = 1; i <= y; i++)
             {
-                p = p * x
+                p = p * x;
             }
             return p;
         }
