@@ -20,7 +20,8 @@ namespace AppVectores
             try
             {
                 Console.WriteLine(" 3 elevado a la 9 es igual a : {0}", potencia(3, 9));
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(" Error: " + ex.Message.ToString());
             }
@@ -36,6 +37,11 @@ namespace AppVectores
             Console.WriteLine("2 elementos a la 5es igual a:{0} ", potencia(2, 5));
             //Console.WriteLine("LA NOTA 5 EQUIVALE A: a:{0}", NotaEquivalente(5));
             vectorInicializar();
+            Console.ReadKey();
+
+
+            vectortarea();
+
             Console.ReadKey();
 
         }
@@ -83,20 +89,20 @@ namespace AppVectores
             for (int i = 0; i < 8; i++)
             {
                 Console.WriteLine("Elemento indice (0) ----->", (i + 1), x[i]);
-            }           
-                                          
-               //imprimir el vector
-             Console.WriteLine("\nELEMENTOS DEL VECTOR\n==================\n");
-            for (int i = 0;i<8;i++)
+            }
+
+            //imprimir el vector
+            Console.WriteLine("\nELEMENTOS DEL VECTOR\n==================\n");
+            for (int i = 0; i < 8; i++)
             {
-                Console.WriteLine("Elememto indice{0} ---> {1}", (i + 1), x[i]);  
+                Console.WriteLine("Elememto indice{0} ---> {1}", (i + 1), x[i]);
 
             }
         }
-                                
 
 
-        
+
+
         public static double potencia2(double x, int y)
         {
             if (x <= 0)
@@ -114,12 +120,46 @@ namespace AppVectores
             }
             return p;
         }
-            
-            
 
-            
+
+        public static void vectortarea()
+        {
+                int[] n;
+                int vector;
+                int numero = 0;
+                int may, men;
+
+
+                Console.WriteLine("De cuantos numeros quiere el vector");
+                vector = int.Parse(Console.ReadLine());
+                n = new int[vector];
+                for (int i = 0; i < vector; i++)
+                {
+                    do
+                    {
+                        Console.WriteLine(" ingrese el elemento " , (i + 1) , ": ");
+                        numero = int.Parse(Console.ReadLine());
+                        n[i] = numero;
+                    } while (numero < 0 || numero > 1000);
+                }
+                may = n[0];
+                men= n[0];
+                for (int i = 0; i < vector; i++)
+                {
+                    if (n[i] > may)
+                        may = n[i];
+                    else if (n[i] < men)
+                        men = n[i];
+                }
+                Console.WriteLine("El mayor es: " + may);
+                Console.WriteLine("El menor es: " + men);
+
+
+                Console.ReadKey();
+            }
+        }
     }
-}
+
     
 
 
